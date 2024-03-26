@@ -27,11 +27,13 @@ def plot_matplotlib():
 def main():
     st.title("Data Display st.dataframe()")
     st.checkbox("Use container width", value=False, key = 'use_container_width')
-    
+
+   
     df = load_data()
     st.dataframe(df, use_container_width=True)  #대시보드에 표 삽입 
 
     #pandas style - 두번째 표
+    st.tite("Maximum value per column")  #대시보드 제목
     st.dataframe(df.iloc[:5,2:].style.highlight_max(axis=0))
 
     plot_matplotlib()  #그래프 삽입
